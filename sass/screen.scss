@@ -54,10 +54,15 @@ h1{
 
 .example .col{
 	background:rgba(255, 0, 0, .2);
-	height:50px;
+	height:68px;
 	padding:10px 0;
 	text-align: center;
-	line-height: 50px;
+	line-height: 70px;
+	border:1px solid #6B6B6B;
+	border-left:none;
+	&:first-child{
+		border-left:1px solid #6B6B6B;
+	}
 	@include respond-to(handheld){
 		height:100px;
 		margin:10px 0;
@@ -67,11 +72,15 @@ h1{
 /* Desktop / Tablet Columns */
 $columns: 12;
 $handheldColumns: 4;
-$columnWidth: 72.00000000px;
+$columnWidth: 83.00000000px;
 $gutterWidth: 12.00000000px;
-$rowWidth: ($columns * $columnWidth) + ($gutterWidth * ($columns - 1));
+$rowWidth: ($columns * $columnWidth);
 $flexColumnWidth: percentage($columnWidth / $rowWidth);
 $flexGutterWidth: percentage($gutterWidth / $rowWidth);
+
+*{
+	box-sizing:border-box;
+}
 
 div.flex-grid {
 	max-width: $rowWidth;
@@ -84,7 +93,8 @@ div.flex-grid {
 	.col {
 		min-height: 1px;
 		float: left;
-		margin:1% 0 1% $flexGutterWidth;
+		margin:1% 0 1% 0;
+		padding: 0 $flexGutterWidth;
 		&:first-child{
 			margin-left:0px;
 		}
@@ -104,7 +114,7 @@ div.flex-grid {
 			}
 		}
 	@mixin span($columns) {
-		width: ($flexColumnWidth * $columns) + ($flexGutterWidth * ($columns - 1));
+		width: ($flexColumnWidth * $columns);
 	}
 
 	@for $i from 1 through $columns {

@@ -12,14 +12,14 @@
 	<script>
 	$(document).ready(function(){
 		$('.example .col').text(function(){
-			return $(this).width();
+			return $(this).outerWidth();
 		});
 		$('.screen').text(function(){
 			return 'Screen Width: ' + $(window).width() + 'px';
 		});
 		$(window).on('resize', function(){
 			$('.example .col').text(function(){
-				return $(this).width();
+				return $(this).outerWidth();
 			});
 			$('.screen').text(function(){
 				return 'Screen Width: ' + $(window).width() + 'px';
