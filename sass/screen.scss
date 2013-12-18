@@ -1,0 +1,123 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+@mixin respond-to($media) {
+	$HANDHELD-MAX-WIDTH: 749px;
+	$TABLET-MIN-WIDTH: $HANDHELD-MAX-WIDTH + 1;
+	$TABLET-MAX-WIDTH: 1009px;
+	$DESKTOP-MIN-WIDTH: $TABLET-MAX-WIDTH + 1;
+
+	@if $media == all-mobile {
+		@media only screen and (max-width: $TABLET-MAX-WIDTH) { @content; }
+	}
+	@else if $media == handheld {
+		@media only screen and (max-width: $HANDHELD-MAX-WIDTH) { @content; }
+	}
+	@else if $media == tablet {
+		@media only screen and (min-width: $TABLET-MIN-WIDTH) and (max-width: $TABLET-MAX-WIDTH) { @content; }
+	}
+	@else if $media == desktop {
+		@media only screen and (min-width: $DESKTOP-MIN-WIDTH) { @content; }
+	}
+}
+.desktop{
+	@include respond-to(all-mobile){
+		display:none;
+	}
+}
+.tablet{
+	display:none;
+	@include respond-to(tablet){
+		display:block;
+	}
+}
+.handheld{
+	display:none;
+	@include respond-to(handheld){
+		display: block;
+	}
+}
+html,body,.flex-grid{
+	min-height: 100%;
+	font-size:20px;
+	font-family: Helvetica;
+	color:#6B6B6B;
+}
+
+h1{
+	padding:20px 0;
+}
+
+.example .col{
+	background:red;
+	opacity:.2;
+	height:50px;
+	padding:10px 0;
+	@include respond-to(handheld){
+		height:100px;
+		margin:10px 0;
+	}
+}
+
+/* Desktop / Tablet Columns */
+$columns: 12;
+$handheldColumns: 4;
+$columnWidth: 72px;
+$gutterWidth: 12px;
+$rowWidth: ($columns * $columnWidth) + ($gutterWidth * ($columns - 1));
+$flexColumnWidth: percentage($columnWidth / $rowWidth);
+$flexGutterWidth: percentage($gutterWidth / $rowWidth);
+
+div.flex-grid {
+	max-width: $rowWidth;
+	width:100%;
+	margin:0 auto;
+
+	@include respond-to(handheld){
+		padding:0 1.6%;
+	}
+	.col {
+		min-height: 1px;
+		float: left;
+		margin:1% 0 1% $flexGutterWidth;
+		&:first-child{
+			margin-left:0px;
+		}
+		&.center{
+			float:none;
+			margin:0% auto;
+			clear:both;
+			text-align: center;
+		}
+
+		@include respond-to(handheld) {
+			float:none;
+			width:100% !important;
+			margin-left:0px;
+			display: table;
+			margin:1% auto;
+			}
+		}
+	@mixin span($columns) {
+		width: ($flexColumnWidth * $columns) + ($flexGutterWidth * ($columns - 1));
+	}
+
+	@for $i from 1 through $columns {
+		.span-#{$i}-#{$columns} {
+			@include span($i);
+		}
+	}
+}
+
+	div.flex-grid:after {
+		/*
+		 * The following clears the floated columns.
+		 */
+		content: "";
+		display: table;
+		clear: both;
+	}
