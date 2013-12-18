@@ -111,10 +111,11 @@ h1 {
 
 /* line 55, ../sass/screen.scss */
 .example .col {
-  background: red;
-  opacity: .2;
+  background: rgba(255, 0, 0, 0.2);
   height: 50px;
   padding: 10px 0;
+  text-align: center;
+  line-height: 50px;
 }
 @media only screen and (max-width: 749px) {
   /* line 55, ../sass/screen.scss */
@@ -125,29 +126,29 @@ h1 {
 }
 
 /* Desktop / Tablet Columns */
-/* line 75, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 div.flex-grid {
   max-width: 996px;
   width: 100%;
   margin: 0 auto;
 }
 @media only screen and (max-width: 749px) {
-  /* line 75, ../sass/screen.scss */
+  /* line 76, ../sass/screen.scss */
   div.flex-grid {
     padding: 0 1.6%;
   }
 }
-/* line 83, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 div.flex-grid .col {
   min-height: 1px;
   float: left;
   margin: 1% 0 1% 1.20482%;
 }
-/* line 87, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 div.flex-grid .col:first-child {
   margin-left: 0px;
 }
-/* line 90, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 div.flex-grid .col.center {
   float: none;
   margin: 0% auto;
@@ -155,7 +156,7 @@ div.flex-grid .col.center {
   text-align: center;
 }
 @media only screen and (max-width: 749px) {
-  /* line 83, ../sass/screen.scss */
+  /* line 84, ../sass/screen.scss */
   div.flex-grid .col {
     float: none;
     width: 100% !important;
@@ -164,56 +165,56 @@ div.flex-grid .col.center {
     margin: 1% auto;
   }
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-1-12 {
   width: 7.22892%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-2-12 {
   width: 15.66265%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-3-12 {
   width: 24.09639%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-4-12 {
   width: 32.53012%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-5-12 {
   width: 40.96386%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-6-12 {
   width: 49.39759%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-7-12 {
   width: 57.83133%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-8-12 {
   width: 66.26506%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-9-12 {
   width: 74.6988%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-10-12 {
   width: 83.13253%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-11-12 {
   width: 91.56627%;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 div.flex-grid .span-12-12 {
   width: 100%;
 }
 
-/* line 116, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 div.flex-grid:after {
   /*
    * The following clears the floated columns.

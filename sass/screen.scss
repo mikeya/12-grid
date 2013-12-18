@@ -53,10 +53,11 @@ h1{
 }
 
 .example .col{
-	background:red;
-	opacity:.2;
+	background:rgba(255, 0, 0, .2);
 	height:50px;
 	padding:10px 0;
+	text-align: center;
+	line-height: 50px;
 	@include respond-to(handheld){
 		height:100px;
 		margin:10px 0;
@@ -66,8 +67,8 @@ h1{
 /* Desktop / Tablet Columns */
 $columns: 12;
 $handheldColumns: 4;
-$columnWidth: 72px;
-$gutterWidth: 12px;
+$columnWidth: 72.00000000px;
+$gutterWidth: 12.00000000px;
 $rowWidth: ($columns * $columnWidth) + ($gutterWidth * ($columns - 1));
 $flexColumnWidth: percentage($columnWidth / $rowWidth);
 $flexGutterWidth: percentage($gutterWidth / $rowWidth);
